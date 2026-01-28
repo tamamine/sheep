@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salon de Sheep | 愛知県西尾市のフェイシャルエステサロン</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700&family=Zen+Old+Mincho:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'base-white': '#FAF9F6', 
+                        'soft-gray': '#F5F5F3',   
+                        'accent-gray': '#706D6A', 
+                        'ash-wood': '#C9BDB0',    
+                        'deep-wood': '#5D544E',   
+                    },
+                    fontFamily: {
+                        serif: ['"Zen Old Mincho"', 'serif'],
+                        sans: ['"Zen Maru Gothic"', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 1.5s ease-out forwards',
+                        'slow-zoom': 'slowZoom 25s linear infinite alternate',
+                        'float': 'float 8s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        slowZoom: {
+                            '0%': { transform: 'scale(1)' },
+                            '100%': { transform: 'scale(1.1)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { font-family: 'Zen Maru Gothic', sans-serif; background-color: #FAF9F6; color: #4A4643; line-height: 2; -webkit-font-smoothing: antialiased; }
+        .font-serif { font-family: 'Zen Old Mincho', serif; letter-spacing: 0.15em; }
+        .reveal { opacity: 0; transform: translateY(25px); transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .hero-overlay { background: linear-gradient(to bottom, rgba(250, 249, 246, 0) 0%, rgba(250, 249, 246, 0.4) 60%, rgba(250, 249, 246, 1) 100%); }
+        .rounded-sheep { border-radius: 60px 20px 60px 20px; }
+        .rounded-card { border-radius: 40px 15px 40px 15px; }
+        
+        /* スムーズなスクロールのための調整 */
+        html { scroll-padding-top: 80px; }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Header -->
+    <header class="fixed w-full z-50 py-4 px-6 md:px-12 flex justify-between items-center bg-white/30 backdrop-blur-md border-b border-ash-wood/10">
+        <div class="flex items-center gap-3">
+            <div class="text-lg md:text-xl font-serif tracking-[0.2em] text-deep-wood">Salon de Sheep</div>
+        </div>
+        <nav class="hidden lg:flex gap-10 text-[10px] tracking-[0.4em] text-accent-gray font-bold">
+            <a href="#concept" class="hover:text-deep-wood transition-colors">CONCEPT</a>
+            <a href="#promises" class="hover:text-deep-wood transition-colors">PROMISE</a>
+            <a href="#menu" class="hover:text-deep-wood transition-colors">MENU</a>
+            <a href="#access" class="hover:text-deep-wood transition-colors">ACCESS</a>
+        </nav>
+        <a href="#booking" class="bg-deep-wood text-white px-7 py-2.5 text-[9px] tracking-[0.2em] rounded-full hover:opacity-80 transition-all duration-300 uppercase font-bold shadow-sm">Reserve</a>
+    </header>
+
+    <!-- Main Visual -->
+    <section class="relative h-[100svh] flex items-center justify-center overflow-hidden bg-[#F0EEEB]">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1484557985045-edf25e08da73?q=80&w=1600&auto=format&fit=crop" 
+                 alt="Main Visual" 
+                 class="w-full h-full object-cover animate-slow-zoom transition-opacity duration-1000">
+            <div class="absolute inset-0 hero-overlay"></div>
+        </div>
+        
+        <div class="relative z-10 text-center px-6 max-w-4xl">
+            <div class="mb-8 inline-block animate-float">
+                 <svg class="w-12 h-12 text-ash-wood/40 mx-auto" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="45" stroke="currentColor" stroke-width="0.5" stroke-dasharray="8 8"/>
+                </svg>
+            </div>
+            <p class="text-[10px] tracking-[0.6em] text-deep-wood/50 mb-8 animate-fade-in-up uppercase font-bold">Pure, Soft, Silence</p>
+            <h1 class="text-3xl md:text-5xl font-serif leading-[1.8] mb-12 animate-fade-in-up text-deep-wood" style="animation-delay: 0.3s;">
+                呼吸を整え、<br>羊の眠りに誘われる。
+            </h1>
+            <div class="animate-fade-in-up" style="animation-delay: 0.6s;">
+                <a href="#concept" class="px-12 py-4 rounded-full border border-ash-wood/40 bg-white/60 backdrop-blur-sm text-[9px] tracking-[0.4em] text-deep-wood font-bold uppercase hover:border-deep-wood transition-all">
+                    View More
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Concept -->
+    <section id="concept" class="py-24 md:py-40 px-6 bg-base-white">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-16">
+            <div class="w-full md:w-1/2 reveal">
+                <div class="aspect-[4/5] bg-soft-gray rounded-sheep overflow-hidden shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=800&auto=format&fit=crop" 
+                         alt="Concept Image"
+                         class="w-full h-full object-cover opacity-90">
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 reveal">
+                <span class="text-[9px] tracking-[0.5em] text-ash-wood font-bold uppercase block mb-6">Concept</span>
+                <h2 class="text-2xl font-serif mb-8 text-deep-wood leading-relaxed">羊が象徴する、<br>平和で清らかな美しさ。</h2>
+                <div class="space-y-6 text-xs md:text-sm text-accent-gray leading-loose font-light">
+                    <p>愛知県西尾市の穏やかな一室で、素肌が深呼吸するひとときを。</p>
+                    <p>白と木の温もりに包まれたミニマルな空間で、羊の毛並みに触れるような優しさをもって、あなたの美しさを丁寧に紡いでいきます。</p>
+                    <p>日常の喧騒を離れ、ただ静かに流れる時間。心と身体を解き放ち、本来の輝きを取り戻すための、特別な場所でありたいと願っています。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gentle Promises -->
+    <section id="promises" class="py-24 md:py-32 bg-soft-gray/50">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <div class="reveal mb-16 md:mb-24">
+                <span class="text-[9px] tracking-[0.5em] text-ash-wood font-bold uppercase block mb-4">Promises</span>
+                <h2 class="text-2xl font-serif text-deep-wood">羊の優しい約束事</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Promise Card 1 -->
+                <div class="reveal bg-white p-10 md:p-12 rounded-card shadow-sm border border-ash-wood/5 flex flex-col items-center">
+                    <div class="mb-8 p-6 bg-base-white rounded-full text-ash-wood">
+                        <!-- Clock/Silence Icon -->
+                        <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                            <path d="M12 2a10 10 0 0 1 0 20M12 2a10 10 0 0 0 0 20" opacity="0.2"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-serif text-lg text-deep-wood mb-6">一、刻を忘れる。</h3>
+                    <p class="text-[11px] text-accent-gray leading-loose font-light">
+                        扉を開けたら、時計を外すように。忙しない社会のリズムを横に置き、ただ「今」の自分だけを感じる贅沢な時間を。
+                    </p>
+                </div>
+                
+                <!-- Promise Card 2 -->
+                <div class="reveal bg-white p-10 md:p-12 rounded-card shadow-sm border border-ash-wood/5 flex flex-col items-center" style="transition-delay: 0.2s;">
+                    <div class="mb-8 p-6 bg-base-white rounded-full text-ash-wood">
+                        <!-- Sheep Motif Icon -->
+                        <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 18c-3.5 0-6.5-1.5-6.5-3.5 0-1 1-2 2.5-2.5.5-2 2-3.5 4-3.5s3.5 1.5 4 3.5c1.5.5 2.5 1.5 2.5 2.5 0 2-3 3.5-6.5 3.5z"></path>
+                            <path d="M9 18v2M15 18v2" opacity="0.5"></path>
+                            <circle cx="12" cy="12" r="9" stroke-dasharray="2 2" opacity="0.3"></circle>
+                        </svg>
+                    </div>
+                    <h3 class="font-serif text-lg text-deep-wood mb-6">二、息を調える。</h3>
+                    <p class="text-[11px] text-accent-gray leading-loose font-light">
+                        呼吸は、ひつじの歩幅で。焦らず、ゆっくりと深く。穏やかで柔らかなリズムに身を委ね、心までふわりと軽く。
+                    </p>
+                </div>
+                
+                <!-- Promise Card 3 -->
+                <div class="reveal bg-white p-10 md:p-12 rounded-card shadow-sm border border-ash-wood/5 flex flex-col items-center" style="transition-delay: 0.4s;">
+                    <div class="mb-8 p-6 bg-base-white rounded-full text-ash-wood">
+                        <!-- Pure/Leaf Icon -->
+                        <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2L4.5 9V22H19.5V9L12 2Z" opacity="0.1"></path>
+                            <path d="M12 22C12 22 12 18 12 13M12 13C12 13 15 11 17 11M12 13C12 13 9 11 7 11" stroke-opacity="0.6"></path>
+                            <circle cx="12" cy="13" r="7"></circle>
+                        </svg>
+                    </div>
+                    <h3 class="font-serif text-lg text-deep-wood mb-6">三、素に還る。</h3>
+                    <p class="text-[11px] text-accent-gray leading-loose font-light">
+                        ありのままを、白に還す。何かを足すのではなく、余分なものを手放して。飾り気のない素肌の美しさを慈しむひととき。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu -->
+    <section id="menu" class="py-24 bg-soft-gray">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-20 reveal">
+                <span class="text-[9px] tracking-[0.5em] text-ash-wood uppercase font-bold block mb-4">Treatment</span>
+                <h2 class="text-2xl font-serif italic text-deep-wood">Menu List</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white/80 p-8 md:p-10 rounded-[40px] reveal border border-white shadow-sm">
+                    <div class="flex justify-between items-end mb-6">
+                        <h3 class="font-serif text-lg text-deep-wood">エイジングケア</h3>
+                        <span class="text-sm font-serif">¥12,000 / 90min</span>
+                    </div>
+                    <p class="text-[11px] text-accent-gray font-light mb-6">
+                        お肌の土台から整え、内側から弾むようなハリと潤いを与えます。年齢と共に変化するお悩みに寄り添う、当サロン一番人気のコースです。
+                    </p>
+                    <div class="h-[1px] bg-ash-wood/20 w-full"></div>
+                </div>
+                <div class="bg-white/80 p-8 md:p-10 rounded-[40px] reveal border border-white shadow-sm">
+                    <div class="flex justify-between items-end mb-6">
+                        <h3 class="font-serif text-lg text-deep-wood">グロウケア</h3>
+                        <span class="text-sm font-serif">¥9,500 / 70min</span>
+                    </div>
+                    <p class="text-[11px] text-accent-gray font-light mb-6">
+                        くすみを払い、光を味方にする透明感溢れる肌へ。独自のトリートメントで血行を促進し、ワントーン明るい表情へと導きます。
+                    </p>
+                    <div class="h-[1px] bg-ash-wood/20 w-full"></div>
+                </div>
+                <div class="bg-white/80 p-8 md:p-10 rounded-[40px] reveal border border-white shadow-sm">
+                    <div class="flex justify-between items-end mb-6">
+                        <h3 class="font-serif text-lg text-deep-wood">ディープクレンズ</h3>
+                        <span class="text-sm font-serif">¥8,000 / 60min</span>
+                    </div>
+                    <p class="text-[11px] text-accent-gray font-light mb-6">
+                        毛穴の汚れを優しく丁寧に取り除き、滑らかな手触りの肌へ。定期的なメンテナンスとして、すべての肌質の方におすすめです。
+                    </p>
+                    <div class="h-[1px] bg-ash-wood/20 w-full"></div>
+                </div>
+                <div class="bg-white/80 p-8 md:p-10 rounded-[40px] reveal border border-white shadow-sm">
+                    <div class="flex justify-between items-end mb-6">
+                        <h3 class="font-serif text-lg text-deep-wood">羊の休息（ヘッド付）</h3>
+                        <span class="text-sm font-serif">¥14,000 / 110min</span>
+                    </div>
+                    <p class="text-[11px] text-accent-gray font-light mb-6">
+                        フェイシャルに加え、深い眠りに誘うドライヘッドスパをセットに。お疲れが溜まっている時の自分へのご褒美に。
+                    </p>
+                    <div class="h-[1px] bg-ash-wood/20 w-full"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Access -->
+    <section id="access" class="py-24 md:py-40 px-6 bg-base-white">
+        <div class="max-w-5xl mx-auto reveal">
+            <div class="flex flex-col md:flex-row gap-16 items-start">
+                <div class="w-full md:w-1/3">
+                    <span class="text-[9px] tracking-[0.5em] text-ash-wood uppercase font-bold block mb-6">Access</span>
+                    <h2 class="text-2xl font-serif text-deep-wood mb-10">Salon Information</h2>
+                    <div class="space-y-8 text-xs text-accent-gray">
+                        <div>
+                            <p class="font-bold text-deep-wood mb-2">ADDRESS</p>
+                            <p>〒445-0000<br>愛知県西尾市◯◯町1-2-3<br>※プライベートサロンのため、詳細は予約時にお伝えします。</p>
+                        </div>
+                        <div>
+                            <p class="font-bold text-deep-wood mb-2">OPENING HOURS</p>
+                            <p>10:00 - 19:00 (最終受付 17:00)<br>定休日：水曜日・不定休</p>
+                        </div>
+                        <div>
+                            <p class="font-bold text-deep-wood mb-2">CONTACT</p>
+                            <p>0563-XX-XXXX<br>info@salondesheep.jp</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-2/3 h-80 md:h-[450px] bg-soft-gray rounded-sheep overflow-hidden grayscale contrast-75 opacity-80 shadow-sm">
+                    <div class="w-full h-full flex items-center justify-center bg-ash-wood/10 relative">
+                        <span class="text-[10px] tracking-[0.2em] text-deep-wood/40 uppercase">Map Area</span>
+                        <div class="absolute inset-0 border border-ash-wood/20"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking CTA -->
+    <section id="booking" class="py-24 bg-deep-wood text-white text-center">
+        <div class="max-w-xl mx-auto px-6 reveal">
+            <h2 class="text-2xl font-serif mb-8 tracking-widest text-base-white/90">穏やかな眠りと美しさを。</h2>
+            <p class="text-xs text-white/60 mb-12 leading-loose">完全予約制・女性専用のプライベートサロンです。<br>ご予約は公式LINE、またはお電話にて承っております。</p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#" class="inline-block px-10 py-5 rounded-full bg-white text-deep-wood text-[10px] tracking-[0.3em] font-bold uppercase hover:bg-ash-wood hover:text-white transition-all shadow-lg">
+                    Official LINE
+                </a>
+                <a href="tel:0000000000" class="inline-block px-10 py-5 rounded-full border border-white/20 text-white text-[10px] tracking-[0.3em] font-bold uppercase hover:bg-white/10 transition-all">
+                    Call Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-[#4a433e] text-white/30 text-center border-t border-white/5">
+        <p class="text-[8px] tracking-[0.4em] uppercase mb-4 text-white/50">Salon de Sheep</p>
+        <div class="flex justify-center gap-6 mb-8">
+            <a href="#" class="text-[9px] hover:text-white transition-colors">INSTAGRAM</a>
+            <a href="#" class="text-[9px] hover:text-white transition-colors">FACEBOOK</a>
+        </div>
+        <p class="text-[8px] tracking-[0.1em]">© 2026 Salon de Sheep. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
